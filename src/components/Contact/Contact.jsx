@@ -8,6 +8,7 @@ export default function Contact({ contact, id }) {
   const dispatch = useDispatch();
 
   const handleDelete = () => {
+    console.log('Deleting contact with id:', id);
     dispatch(deleteContact(id));
   };
   return (
