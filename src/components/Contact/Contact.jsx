@@ -1,10 +1,14 @@
 import { PiPhoneFill } from 'react-icons/pi';
 import { PiUserFill } from 'react-icons/pi';
 import css from './Contact.module.css';
+import { useDispatch } from 'react-redux';
+import { deleteContact } from '../../redux/contactsSlice';
 
-export default function Contact({ contact, onDelete }) {
+export default function Contact({ contact, id }) {
+  const dispatch = useDispatch();
+
   const handleDelete = () => {
-    onDelete(contact.id);
+    dispatch(deleteContact(id));
   };
   return (
     <li key={contact.id} className={css.item}>
